@@ -1,0 +1,115 @@
+#header{
+    border-bottom: 2px solid rgb(42, 218, 86);
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 15vh;
+}
+#container{
+    background-color: rgb(27, 27, 27);
+}
+#header a{
+    color:rgb(58, 216, 97);
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.dropdown-menu a:hover{
+    background-color: rgb(42, 218, 86);
+}
+#dropdownMenu a:hover{
+    color:  rgb(0, 0, 0);
+}
+#header .logo{
+    width:120px;
+    height:90px;
+}
+.navbar-dark .navbar-toggler{
+    background-color: rgb(0, 0, 0);
+}
+#burguerbutton{
+    border: 1px solid rgb(42, 218, 86);
+    padding: .85rem .85rem;
+}
+#header form{
+    margin-right: 0.5rem;
+}
+#header img{
+    width: 38px;
+    height: 38px;
+    align-self: center;
+}
+.header-final{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+#div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* column-count: 3; */
+    /* justify-content: space-around; */
+    position: absolute;
+    top: 15vh;
+    width: 100vw;
+    background-color: rgb(0, 0, 0);
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    height: 20rem;
+    width: 8.2rem;
+    margin: 1rem;
+    text-align: center;
+    background-color: blue;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    background-color: rgb(58, 216, 97);
+}
+
+.card img{
+    height: 80%;
+    width: 100%;
+}
+
+.texto{
+    font-size: 80%;
+    word-wrap: break-word;
+}
+
+#modal{
+    display: flex;
+}
+
+#datos{
+    margin: 1rem solid black;
+    width: 50%;
+    margin: 0.2rem;
+}
+
+#poster{
+    margin: 0.2rem;
+    width: 50%;
+}
+
+#poster img{
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (min-width: 576px)and (max-width:755px){
+    #header .form-control{
+        width:  150px;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    #header img{
+        margin-top:10px;
+        align-self:end;
+    }
+}

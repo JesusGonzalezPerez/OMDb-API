@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YisusTube</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../CSS/carteleraCine.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="..\Imágenes\yisustube.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+    </div>
+    <div id="container">
+        <nav id="header" class="navbar navbar-expand-sm navbar-dark" style="background-color: #000000;">
+            <a class="navbar-brand" href="../HTML/index.html"><img class="logo"
+                    src="..\Imágenes\yisustube.png"></a>
+            <button id="burguerbutton" class="navbar-toggler d-lg-none btn-lg" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Categorías</a>
+                        <div class="dropdown-menu" id="dropdownMenu" aria-labelledby="dropdownId"
+                            style="background-color: #000000;">
+                            <a class="dropdown-item" href="#">Acción</a>
+                            <a class="dropdown-item" href="#">Animación</a>
+                            <a class="dropdown-item" href="#">Aventura</a>
+                            <a class="dropdown-item" href="#">Biografico</a>
+                            <a class="dropdown-item" href="#">Ciencia Ficción</a>
+                            <a class="dropdown-item" href="#">Comedia</a>
+                            <a class="dropdown-item" href="#">Crimen</a>
+                            <a class="dropdown-item" href="#">Documental</a>
+                            <a class="dropdown-item" href="#">Drama</a>
+                            <a class="dropdown-item" href="#">Familiar</a>
+                            <a class="dropdown-item" href="#">Fantasía</a>
+                            <a class="dropdown-item" href="#">Misterio</a>
+                            <a class="dropdown-item" href="#">Música</a>
+                            <a class="dropdown-item" href="#">Romance</a>
+                            <a class="dropdown-item" href="#">Terror</a>
+                            <a class="dropdown-item" href="#">Thriller</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="header-final">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input id="textfield" class="form-control mr-sm-2" type="text" value="Dragon Ball Z" placeholder="Buscar...">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="peticionAJAX()">Buscar</button>
+                    </form>
+                    <img id="user" src="..\Imágenes\user.png" data-toggle="modal" data-target="#modelUser" alt="User">
+                </div>
+            </div>
+        </nav>
+
+        <div id="div"></div>
+
+
+        <!-- ModalPeli -->
+        <div class="modal" id="info" tabindex="-1" role="dialog" aria-labelledby="modelMovie" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modalTitle">Descripción</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modal" class="form-group">
+                            <div id=poster>
+                                
+                            </div>
+                            <div id="datos">
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+        <script src="..\js\index.js"></script>
+</body>
+
+</html>
