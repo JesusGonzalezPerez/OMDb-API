@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YisusTube</title>
-    <!-- External CSS -->
-    <link rel="stylesheet" href="../css/carteleraCine.css">
+    <head>
+        <meta charset="UTF-8">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="..\Imágenes\yisustube.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        <title>YisusTube</title>
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="../css/carteleraCine.css">    
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="..\Imágenes\yisustube.png" />
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<body>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
 
-    <div class="container">
-    </div>
-    <div id="container">
-        <nav id="header" class="navbar navbar-expand-sm navbar-dark" style="background-color: #000000;">
+    <body>
+        <!-- Header -->
+        <nav id="header" class="navbar navbar-expand-sm navbar-dark d-flex justify-content-between" style="background-color: #000000;">
             <a class="navbar-brand" href="../HTML/index.html"><img class="logo"
                     src="..\Imágenes\yisustube.png"></a>
             <button id="burguerbutton" class="navbar-toggler d-lg-none btn-lg" type="button" data-toggle="collapse"
@@ -29,86 +36,92 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Categorías</a>
-                        <div class="dropdown-menu" id="dropdownMenu" aria-labelledby="dropdownId"
-                            style="background-color: #000000;">
-                            <a class="dropdown-item" href="#">Acción</a>
-                            <a class="dropdown-item" href="#">Animación</a>
-                            <a class="dropdown-item" href="#">Aventura</a>
-                            <a class="dropdown-item" href="#">Biografico</a>
-                            <a class="dropdown-item" href="#">Ciencia Ficción</a>
-                            <a class="dropdown-item" href="#">Comedia</a>
-                            <a class="dropdown-item" href="#">Crimen</a>
-                            <a class="dropdown-item" href="#">Documental</a>
-                            <a class="dropdown-item" href="#">Drama</a>
-                            <a class="dropdown-item" href="#">Familiar</a>
-                            <a class="dropdown-item" href="#">Fantasía</a>
-                            <a class="dropdown-item" href="#">Misterio</a>
-                            <a class="dropdown-item" href="#">Música</a>
-                            <a class="dropdown-item" href="#">Romance</a>
-                            <a class="dropdown-item" href="#">Terror</a>
-                            <a class="dropdown-item" href="#">Thriller</a>
-                        </div>
-                    </li>
-                </ul>
-
-                <div class="header-final">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input id="textfield" class="form-control mr-sm-2" type="text" value="Dragon Ball Z" placeholder="Buscar...">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="peticionAJAX()">Buscar</button>
-                    </form>
-                    <img id="user" src="..\Imágenes\user.png" data-toggle="modal" data-target="#modelUser" alt="User">
-                </div>
+            <div class="collapse navbar-collapse m-3" id="collapsibleNavId">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search anything..." id="titulo">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="buscar">Search</button>
             </div>
         </nav>
 
-        <div id="div"></div>
+        <!-- Div for mock up the films -->
+        <div id="div">
 
+        </div>
 
-        <!-- ModalPeli -->
-        <div class="modal" id="info" tabindex="-1" role="dialog" aria-labelledby="modelMovie" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+        <!-- Modal -->
+        <div class="modal fade  bd-example-modal-lg" id="info" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 id="modalTitle">Descripción</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="modal" class="form-group">
-                            <div id=poster>
-                                
-                            </div>
-                            <div id="datos">
-
-                            </div>
-                            
+                    <!-- Modal-header-->
+                    <div class="d-flex align-items-center px-4 py-3 text-center" style="background-color: #292b2c; color:#5cb85c">
+                        <h2 class="modal-title d-flex justify-content-center w-100" id="modalTitle"></h2>
+                        <div>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" style="color:white">&times;</span>
+                            </button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <!-- Modal-body-->
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class='d-flex flex-column flex-lg-row justify-content-around'>
+                                <!-- <div class="d-flex justify-content-around"> -->
+                                    <!-- Img -->
+                                    <img id='imagen' height="80%">
+                                    <!-- Info -->
+                                    <div id="datos">
+                                        <h4><strong>Genre</strong></h4>
+                                        <p id="genre"></p>
+
+                                        <h4><strong>Release</strong></h4>
+                                        <p id="released"></p>
+
+                                        <h4><strong>Rating</strong></h4>
+                                        <p id="rating"></p>
+
+                                        <h4><strong>Plot</strong></h4>
+                                        <p id="plot"></p>
+
+                                        <h4><strong>Director</strong></h4>
+                                        <p id="director"></p>
+
+                                        <h4><strong>Writer</strong></h4>
+                                        <p id="writer"></p>
+
+                                        <h4><strong>Actors</strong></h4>
+                                        <p id="actors"></p>
+                                    </div>
+                                <!-- </div> -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
             crossorigin="anonymous"></script>
+
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
 
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <script src="..\js\index.js"></script>
-</body>
+
+    </body>
 
 </html>
